@@ -14,18 +14,22 @@ if (isset($_POST["pseudo"]) && !empty($_POST["pseudo"])){
     var_dump($pseudo);
     $request = $database->query("SELECT id FROM user WHERE pseudo = '$pseudo' ");
         $pseudoexist = $request->fetch();
-        
-if (!$pseudoexist) {
-    $request = $database->prepare("INSERT INTO user (pseudo) VALUES (:pseudo)");
-       $resultat = $request->execute([
-           'pseudo' => $_POST['pseudo'],
+
+    if ($pseudo === 'admin'){
+        header("Location: ../pages/admin.php");
+
+    } else if (!$pseudoexist) {
+        $request = $database->prepare("INSERT INTO user (pseudo) VALUES (:pseudo)");
+        $resultat = $request->execute(['pseudo' => $_POST['pseudo'],
         ]);
+        header("Location: ../pages/user.php");
     
-};
+    }else{
+        header("Location: ../pages/user.php");
+    };
 
 }
     
-   header("Location: ../pages/user.php");
 
 
 

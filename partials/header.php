@@ -1,6 +1,4 @@
-<?php
-include_once('/laragon/www/PHP-PDO/lecteur-audio/process/connect_db.php');
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +11,7 @@ include_once('/laragon/www/PHP-PDO/lecteur-audio/process/connect_db.php');
 <body>
 
 <header>
-<nav class="navbar navbar-dark bg-black fixed-top">
+<nav class="navbar navbar-dark bg-black">
   <div class="container-fluid">
     <img src="../img/logo_gold_and_blak_with_text_SpotDeez.jpg" alt="logo spotdeez">
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
