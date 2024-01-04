@@ -1,12 +1,17 @@
 <?php
 session_start();
-$pseudo=$_SESSION['pseudo'];
+$pseudo = $_SESSION['pseudo'];
+
 require_once('../process/connect_db.php');
 
 
 $request = $database->query("SELECT * FROM user WHERE pseudo='$pseudo'");
-        
+
 $user = $request->fetch();
+
+
+
+
 
 $request = $database->query("SELECT user.pseudo, playlist.name, song.title, song.singer FROM user 
                                 JOIN playlist ON user.id= playlist.user_id 
@@ -17,4 +22,3 @@ $request = $database->query("SELECT user.pseudo, playlist.name, song.title, song
 
 $playlist = $request->fetch();
 
-?>

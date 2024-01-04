@@ -17,10 +17,10 @@
             <div class="container bg-light p-5 d-flex justify-content-center">
             <form action="../process/treatment_connect.php" method="post">
                     <div class="mb-3 d-flex justify-content-center">
-                        <label for="exampleInputEmail1" class="form-label">Enter votre pseudo : </label>
+                        <label for="exampleInputEmail1" class="form-label">Entrer votre pseudo : </label>
                         <input type="text" class="form" name="pseudo" id="exampleInputtext">
                     </div>
-                    <button type="submit" class="btn btn-white">Valider</button>
+                    <button type="submit" class="btn btn-secondary">Valider</button>
                 </form>
             </div>
         </div>

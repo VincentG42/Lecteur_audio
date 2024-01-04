@@ -15,6 +15,14 @@ include_once('../process/treatment_user.php');
         <?php } ?>
             
     </div>
+    <div>
+        <form action="../process/add_playlist.php" method="post">
+            <label for="playlist_name" class="form-label">PLaylist Name </label>
+            <input type="text" class="form" name="playlist_name" id="playlist_name" Value="Ma playlist">
+
+            <button type="submit" class="btn btn-black">+ Creer une playlist +</button>
+        </form>
+    </div>
 
 
 </div>
