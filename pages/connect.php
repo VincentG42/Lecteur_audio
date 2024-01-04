@@ -7,6 +7,7 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,23 +15,24 @@
     <link href="style.css" rel="stylesheet">
     <title>Document</title>
 </head>
+
 <body>
 
-<div class="d-flex clum"
-<div class="h-100 w-100">
-    <div class="container bg-light p-5 d-flex justify-content-center">
-        <form action="../process/treatment_connect.php" method="post">
-            <div class="mb-3 d-flex justify-content-center">
-                <label for="exampleInputEmail1" class="form-label">Enter votre pseudo : </label>
-                <input type="text" class="form" name="pseudo" id="exampleInputtext">
+    <div class="d-flex clum">
+        <div class="h-100 w-100">
+            <div class="container bg-light p-5 d-flex justify-content-center">
+            <form action="../process/treatment_connect.php" method="post">
+                    <div class="mb-3 d-flex justify-content-center">
+                        <label for="exampleInputEmail1" class="form-label">Enter votre pseudo : </label>
+                        <input type="text" class="form" name="pseudo" id="exampleInputtext">
+                    </div>
+                    <button type="submit" class="btn btn-white">Valider</button>
+                </form>
             </div>
-            <button type="submit" class="btn btn-white">Valider</button>
-        </form>
-    </div>
+        </div>
     </div>
 
 
-    
 
 
 
@@ -55,6 +57,8 @@
 
 
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
+
 </html>
