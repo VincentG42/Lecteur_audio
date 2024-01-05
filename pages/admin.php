@@ -1,8 +1,3 @@
-<?php
-include_once('../process/treatment_admin.php')
-
-?>
-
 
 <!DOCTYPE html>
 <html lang="en">

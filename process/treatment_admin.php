@@ -31,5 +31,6 @@ if (isset($_POST["title"]) && !empty($_POST["title"])
                                     ]);
 
     }
+    header('Location: ../pages/admin.php')
 ?>
 

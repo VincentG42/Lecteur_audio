@@ -12,3 +12,14 @@ header img{
     height: 50px;
     width: auto;
 }
+
+.songs_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.songs_unit{
+    padding-top: 1em;
+    border:1px black solid;
+}
