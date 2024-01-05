@@ -23,3 +23,12 @@ header img{
     padding-top: 1em;
     border:1px black solid;
 }
+
+.playlist_wrapper{
+    border: 1px black solid;
+}
+
+.playlist_song_list{
+    border: 1px black solid;
+
+}

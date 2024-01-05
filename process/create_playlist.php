@@ -20,7 +20,7 @@ if(!$playlist_exist){
         $request = $database->prepare("INSERT INTO playlist (name, user_id) VALUES (:name, :user_id)");
         $resultat = $request->execute(['name' => $_POST['playlist_name'],
         'user_id' => $user['id']
-]);
+        ]);
 }
 
 

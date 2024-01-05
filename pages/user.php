@@ -1,26 +1,62 @@
 <?php
 require_once('../partials/header.php');
 include_once('../process/treatment_user.php');
+// var_dump($playlists)
+if(isset($_POST['playlists'])){
+    $playlistID = intval($_POST['playlists']);
+    $request = $database->query("SELECT * FROM playlist 
+                                JOIN playlist_song ON playlist.id = playlist_song.playlist_id 
+                                JOIN song ON playlist_song.song_id = song.id
+                                WHERE playlist_id ='$playlistID'");
+
+$playlist_songs = $request->fetchAll();
+}
+
 ?>
 
 <div class="user_card container">
     <h2>Hello <?= $user['pseudo']?></h2>
-    <div>
-        <h3>Votre playlist</h3>
-        <?php if (!empty($playlist)){ 
-        foreach($playlist as $song){?>
-            <p> <?= $song['title']?><span><?= $song['singer']?></span></p>
-        <?php }}else{ ?>
-                <p> Vous n'avez pas encore de playlist </p>
-        <?php } ?>
+    <div class="playlist_wrapper my-4 p-3">
+        <h3>Vos playlists</h3>
+            <?php if (!empty($playlists)){ ?>
+                <form action="" id="select_playlist_form" method="post">
+                    <select name="playlists" id="">
+                            <option>Choississez votre playlist</option>
+                        <?php foreach($playlists as $playlist){?>
+                            <option value="<?=$playlist['id']?>"><?=$playlist['name']?></option>
+                        <?php } ?>
+                    </select>
+                </form>
+                
+            <?php }else{ ?>
+                    <p> Vous n'avez pas encore de playlist </p>
+            <?php } ?>
+        <ul>
+            <?php if(isset($_POST['playlists'])){
+            foreach($playlist_songs as $song){ ?>
+                <li class="playlist_song_list d-flex my-2 align-items-center p-1"> 
+                    <img src="../img/<?=$song['pictures']?>" alt="song cover" height="50px" width="auto">
+                    <div>
+                        <p><?= $song['title']?><span class="text-secondary"> par </span> <?= $song['singer']?> </p>
+                    </div>
+            
+                </li>
+            <?php } }?>
+        </ul>
+        <div>
+            <form action="../pages/audioplayer_playlist.php" method='post'>
+                <input type="hidden" name="playlist_id" value="<?=$playlist['id'] ?>">
+                <button type="submit" class="btn btn-dark">Lancer la playlist</button>
+            </form>
+        </div>
             
     </div>
     <div>
-        <form action="../process/add_playlist.php" method="post">
-            <label for="playlist_name" class="form-label">PLaylist Name </label>
+        <form action="../process/create_playlist.php" method="post">
+            <label for="playlist_name" class="form-label">Choissisez un nom:  </label>
             <input type="text" class="form" name="playlist_name" id="playlist_name" Value="Ma playlist">
 
-            <button type="submit" class="btn btn-black">+ Creer une playlist +</button>
+            <button type="submit" class="btn btn-dark">+ Creer une playlist +</button>
         </form>
     </div>
 
@@ -28,7 +64,7 @@ include_once('../process/treatment_user.php');
 </div>
 
 
-
+<script src="../js/autosubmit.js"></script>
 <?php
     require_once('../partials/footer.php');
 ?>
