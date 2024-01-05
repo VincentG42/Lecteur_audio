@@ -12,18 +12,20 @@
 
 <body id="body_connect">
 
-<div class="d-flex clum"
-<div class="h-100 w-100">
-    <div class="container bg-light p-5 d-flex justify-content-center">
-        <form action="../process/treatment_connect.php" method="post">
-            <div class="mb-3 d-flex justify-content-center">
-                <label for="exampleInputEmail1" class="form-label">Enter votre pseudo : </label>
-                <input type="text" class="form" name="pseudo" id="exampleInputtext">
-            </div>
-            <button type="submit" class="btn btn-white">Valider</button>
-        </form>
+
+  <div class="d-flex clum"
+  <div class="h-100 w-100">
+      <div class="container bg-light p-5 d-flex justify-content-center">
+          <form action="../process/treatment_connect.php" method="post">
+              <div class="mb-3 d-flex justify-content-center">
+                  <label for="exampleInputEmail1" class="form-label">Enter votre pseudo : </label>
+                  <input type="text" class="form" name="pseudo" id="exampleInputtext">
+                </div>
+                <button type="submit" class="btn btn-white">Valider</button>
+            </form>
+        </div>
     </div>
-    </div>
+
 
 
 
