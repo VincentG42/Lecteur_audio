@@ -34,12 +34,21 @@ $playlist_songs = $request->fetchAll();
         <ul>
             <?php if(isset($_POST['playlists'])){
             foreach($playlist_songs as $song){ ?>
-                <li class="playlist_song_list d-flex my-2 align-items-center p-1"> 
-                    <img src="../img/<?=$song['pictures']?>" alt="song cover" height="50px" width="auto">
-                    <div>
-                        <p><?= $song['title']?><span class="text-secondary"> par </span> <?= $song['singer']?> </p>
+                <li class="playlist_song_list d-flex my-2 justify-content-between p-1"> 
+                    <div class="d-flex">
+
+                        <img src="../img/<?=$song['pictures']?>" alt="song cover" height="50px" width="auto">
+                       
+                            <p><?= $song['title']?><span class="text-secondary"> par </span> <?= $song['singer']?> </p>
+                        
                     </div>
-            
+                    <div class="add_playlist col-2 me-5">
+                        <form action="../process/treatment_delete_from_playlist.php" method="post" class="">
+                            <input type="hidden" name="playlist_id" value="<?=$playlist['id'] ?>">
+                            <input type="hidden" name="song_id" value="<?=$song['id'] ?>">
+                            <button type="submit" class="btn btn-danger">Supprimer cette chanson de la playlist</button>
+                        </form>
+                    </div>
                 </li>
             <?php } }?>
         </ul>

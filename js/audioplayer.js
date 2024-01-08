@@ -1,13 +1,8 @@
 audioPlayer();
 
-let onPlay= document.querySelector('#onplay');
+
 let audio= document.querySelector('audio');
-console.log(audio);
-
-// if
-
-// $trackOnPLay = audio.src.split('/')[6].split('.')[0];
-// onPlay.innerHTML ="En cours de lecture: "+{$trackOnPlay} 
+console.log( $("#audioplayer")[0]);
 
 
 
@@ -18,43 +13,48 @@ function audioPlayer(){
 
     $("#audioplayer")[0].src =$("#playlist li a")[0];
     $("#audioplayer")[0].play();
+
     $("#playlist li a").click(function (e){
         e.preventDefault();
         $("#audioplayer")[0].src = this;
         $("#audioplayer")[0].play();
-        currentSong =$(this).parent().index(); 
-       
+        currentSong =$(this).parent().index();    
     })
 
-        audioPlayer.addEventListener("ended",function () {
-            currentSong++;
-            if (currentSong == $("#playlist li a").length)
+    audioPlayer.addEventListener("ended",function () {
+        currentSong++;
+        if (currentSong == $("#playlist li a").length)
             currentSong = 0;
-            audioPlayer.src = $("#playlist li a")[currentSong].href;
-            audioPlayer.play(); 
+        audioPlayer.src = $("#playlist li a")[currentSong].href;
+        audioPlayer.play(); 
     });
 
     let forward = document.querySelector('#forward')
-        forward.addEventListener("click",function () {
-            currentSong++;
-            if (currentSong == $("#playlist li a").length)
-            currentSong = 0;
-            audioPlayer.src = $("#playlist li a")[currentSong].href;
-            audioPlayer.play(); 
+
+    forward.addEventListener("click",function () {
+        currentSong++;
+        if (currentSong == $("#playlist li a").length)
+        currentSong = 0;
+        audioPlayer.src = $("#playlist li a")[currentSong].href;
+        audioPlayer.play(); 
     });
 
     let backward = document.querySelector('#backward')
+
     backward.addEventListener("click",function () {
-            currentSong--;           
-            audioPlayer.src = $("#playlist li a")[currentSong].href;
-            audioPlayer.play(); 
+        currentSong--;           
+        audioPlayer.src = $("#playlist li a")[currentSong].href;
+        audioPlayer.play(); 
     });
 
     let currentIndex = $("#playlist li a").length;
+
     function entierAleatoire(max){
         indexRandom = Math.floor(Math.random() * (max - 0 + 1));
         return  indexRandom
     }
+
+
     let shuffleNext= document.querySelector('#shuffle')
     
     shuffleNext.addEventListener("click",function () {       
@@ -63,7 +63,11 @@ function audioPlayer(){
         audioPlayer.src = $("#playlist li a")[indexRandom].href;
         audioPlayer.play(); 
     });
-    
+
+    // let onPlay= document.querySelector('#onplay');
+    // $trackOnPLay = $("#audioplayer")[0].src.split('/')[6].split('.')[0];
+    // console.log($trackOnPLay);
+    // onPlay.innerHTML ="En cours de lecture: "+$trackOnPlay    
 }
 
 
