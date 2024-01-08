@@ -2,9 +2,10 @@ audioPlayer();
 
 
 let audio= document.querySelector('audio');
-console.log( $("#audioplayer")[0]);
+// console.log( $("#audioplayer")[0]);
 
-
+const audioTracks = audio.audioTracks;
+console.log(audioTracks);
 
 function audioPlayer(){
 
@@ -18,7 +19,7 @@ function audioPlayer(){
         e.preventDefault();
         $("#audioplayer")[0].src = this;
         $("#audioplayer")[0].play();
-        currentSong =$(this).parent().index();    
+        currentSong =$(this).parent().index(); 
     })
 
     audioPlayer.addEventListener("ended",function () {
@@ -63,12 +64,9 @@ function audioPlayer(){
         audioPlayer.src = $("#playlist li a")[indexRandom].href;
         audioPlayer.play(); 
     });
-
-    // let onPlay= document.querySelector('#onplay');
-    // $trackOnPLay = $("#audioplayer")[0].src.split('/')[6].split('.')[0];
-    // console.log($trackOnPLay);
-    // onPlay.innerHTML ="En cours de lecture: "+$trackOnPlay    
+   
 }
+
 
 
 

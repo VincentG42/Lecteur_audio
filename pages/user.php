@@ -14,9 +14,9 @@ $playlist_songs = $request->fetchAll();
 
 ?>
 
-<div class="user_card container">
+<div class="user_card container-fluid w-100 d-flex flex-column  pt-2  bg-secondary text-light justify-content-center align-items-center">
     <h2>Hello <?= $user['pseudo']?></h2>
-    <div class="playlist_wrapper my-4 p-3">
+    <div class="playlist_wrapper my-4 p-3 d-flex flex-column justify-content-center align-items-center">
         <h3>Vos playlists</h3>
             <?php if (!empty($playlists)){ ?>
                 <form action="" id="select_playlist_form" method="post">
@@ -34,8 +34,8 @@ $playlist_songs = $request->fetchAll();
         <ul>
             <?php if(isset($_POST['playlists'])){
             foreach($playlist_songs as $song){ ?>
-                <li class="playlist_song_list d-flex my-2 justify-content-between p-1"> 
-                    <div class="d-flex">
+                <li class="playlist_song_list d-flex my-2 justify-content-between align-items-center p-1"> 
+                    <div class="d-flex align-items-center">
 
                         <img src="../img/<?=$song['pictures']?>" alt="song cover" height="50px" width="auto">
                        
@@ -46,7 +46,7 @@ $playlist_songs = $request->fetchAll();
                         <form action="../process/treatment_delete_from_playlist.php" method="post" class="">
                             <input type="hidden" name="playlist_id" value="<?=$playlist['id'] ?>">
                             <input type="hidden" name="song_id" value="<?=$song['id'] ?>">
-                            <button type="submit" class="btn btn-danger">Supprimer cette chanson de la playlist</button>
+                            <button type="submit" class="btn btn-danger suppr_button">Supprimer de la playlist</button>
                         </form>
                     </div>
                 </li>

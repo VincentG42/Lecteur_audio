@@ -18,7 +18,16 @@ header img{
     justify-content: center;
     align-items: center;
 }
-
+.container_connect{
+    width: 100vw;
+    height: 100vh;
+}
+.card_connect{
+    background-color: rgba(0, 0, 0, 0.705)!important;
+    border-radius: 25px;
+    border: 1px black solid;
+    box-shadow: 2px 2px 2px black;
+}
 .songs_unit{
     padding-top: 1em;
     border:1px black solid;
@@ -36,7 +45,9 @@ header img{
 li{
     list-style: none;
 }
-
+.suppr_button{
+    font-size: x-small;
+}
 /* page audioplayer_playlist */
 
 .audioplayer_wrapper{
