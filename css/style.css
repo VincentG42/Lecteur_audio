@@ -32,3 +32,25 @@ header img{
     border: 1px black solid;
 
 }
+
+li{
+    list-style: none;
+}
+
+/* page audioplayer_playlist */
+
+.audioplayer_wrapper{
+    width: 100vw;
+}
+.link_playlist:link{
+ color: black;
+ text-decoration: none;
+}
+.link_playlist:visited{
+    color: black;
+    text-decoration: none;
+}
+
+.playslist_row:hover{
+        background-color: rgba(0, 0, 0, 0.091);
+}
