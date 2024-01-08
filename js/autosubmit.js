@@ -12,18 +12,4 @@ playlistChose.addEventListener('change', ()=>{
 
 
 })
-// let playlistChose = document.querySelector('.playlist_choice');
-// let playlistChoseForm = document.querySelector('#select_playlist_form')
-
-// console.log(playlistChose)
-
-
-// playlistChose.addEventListener('click', ()=>{
-
-//      if (playlistChose.value){
-//             playlistChoseForm.submit()
-//         }
-
-
-// })
 
