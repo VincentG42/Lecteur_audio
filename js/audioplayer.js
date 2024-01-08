@@ -1,18 +1,28 @@
 audioPlayer();
 
-console.log($("#audioplayer")[0]);
-console.log($("#playlist li"));
+let onPlay= document.querySelector('#onplay');
+let audio= document.querySelector('audio');
+console.log(audio);
+
+// if
+
+// $trackOnPLay = audio.src.split('/')[6].split('.')[0];
+// onPlay.innerHTML ="En cours de lecture: "+{$trackOnPlay} 
+
+
 
 function audioPlayer(){
-    let currentSong =0
-    let audioPlayer = document.querySelector('#audioplayer')
+
+    let currentSong =0;
+    let audioPlayer = document.querySelector('#audioplayer');
+
     $("#audioplayer")[0].src =$("#playlist li a")[0];
     $("#audioplayer")[0].play();
     $("#playlist li a").click(function (e){
         e.preventDefault();
         $("#audioplayer")[0].src = this;
         $("#audioplayer")[0].play();
-        currentSong =$(this).parent().index();
+        currentSong =$(this).parent().index(); 
        
     })
 
@@ -42,7 +52,7 @@ function audioPlayer(){
 
     let currentIndex = $("#playlist li a").length;
     function entierAleatoire(max){
-        indexRandom = Math.floor(Math.random() * (max - 1 + 1));
+        indexRandom = Math.floor(Math.random() * (max - 0 + 1));
         return  indexRandom
     }
     let shuffleNext= document.querySelector('#shuffle')
@@ -55,6 +65,8 @@ function audioPlayer(){
     });
     
 }
+
+
 
 
 

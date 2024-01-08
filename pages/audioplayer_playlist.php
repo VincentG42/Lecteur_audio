@@ -6,7 +6,9 @@ include_once('../partials/header.php');
 if (isset($_POST['playlist_id'])){
     $playlistId = $_POST['playlist_id'];
 
-    $request = $database->query("SELECT * FROM playlist_song JOIN song ON playlist_song.song_id = song.id where playlist_id='$playlistId'");
+    $request = $database->query("SELECT * FROM playlist_song 
+                                JOIN song ON playlist_song.song_id = song.id 
+                                WHERE playlist_id='$playlistId'");
 
 
     $playlistToPLay = $request -> fetchAll();
