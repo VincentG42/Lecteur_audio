@@ -5,15 +5,19 @@ include_once('../process/connect_db.php');
 
 ?>
 
-<div class="songs_container w-100">
-  
-  <div class="w-50 my-5">
-  <?php foreach ($songs as $song) { ?>
-    <div class="songs_card  row p-3">
-      
 
-        <img class="minipic col-1" src="../img/<?= $song['pictures'] ?>">
-        <div class="col-4 d-flex justify-content-around">
+
+<?php
+   
+
+   
+   
+   
+   foreach ($songs as $song) { ?>
+      <div class="songs_unit row justify-content-center align-items-center">
+        
+        <img class="minipic col-3" src="../img/<?= $song['pictures'] ?>">
+        <div class="col-6">
           <p><?= $song['title'] ?></p>
           <p><?= $song['singer'] ?></p>
         </div>
@@ -30,31 +34,45 @@ include_once('../process/connect_db.php');
                     <?php } ?>
               </select>
             <input type="hidden" name="song_id" value="<?=$song['id'] ?>">
-            <button type="submit" class="btn"><svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path opacity="1" d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg></button>
-        </form>
-   
-         
-         
-      <div class="mb-3 col-11"><!--commentaires-->
-        <form form action="../process/treatment_comment.php" method="post" class="row">
-          <input type="hidden" name="pseudo" value="<?=$_SESSION['pseudo'] ?>">
-          <input type="hidden" name="song_id" value="<?=$song['id'] ?>">
+            <button type="submit"><svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path opacity="1" fill="#1E3050" d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg></button>
+          </form>
+        </div>
+       <div>
 
-          <label for="exampleInputPassword1" class="form-label col-2">Ecrivez Votre commentaire</label>
-          <input type="text" class="form-control col-5" id="text" name="content">
-          <button type="submit" class="btn btn-dark col-2">Envoyer</button>
-        </form>
-      </div>
+      
+       -()
+    
+  
+    <div class="mb-3">
+       <input type="hidden" name="pseudo" value="<?=$_SESSION['pseudo'] ?>">
+        <input type="hidden" name="song_id" value="<?=$song['id'] ?>">
+
+      <label for="exampleInputPassword1" class="form-label">Ecriver Votre commentaire</label>
+      <input type="text" class="form-control" id="text" name="content">
     </div>
-    <?php } ?>
+   
+    <button type="submit" class="btn btn-dark">Envoyer</button>
+  </form>
 
+       </div>
+      </div>
+    <?php } ?>
+  
   </div>
 
 </div>
 
 
 
-  <script type="text/javascript" src="../js/main.js"></script>
+
+
+
+
+
+
+
+
+<script src="../js/main.js"></script>
   <?php
-  require_once('../partials/footer.php');
+include_once '../partials/footer.php';
   ?>
