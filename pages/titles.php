@@ -2,18 +2,20 @@
 require_once('../partials/header.php');
 include_once('../process/treatment_titles.php');
 include_once('../process/connect_db.php');
-session_start();
+
 ?>
 
-<div class="songs_container w-100 bg-secondary">
-  <div class="songs_card w-50 my-5 bg-light">
-    <?php
+
+
+<?php
    
- 
 
-    foreach ($songs as $song) { ?>
+   
+   
+   
+   foreach ($songs as $song) { ?>
       <div class="songs_unit row justify-content-center align-items-center">
-
+        
         <img class="minipic col-3" src="../img/<?= $song['pictures'] ?>">
         <div class="col-6">
           <p><?= $song['title'] ?></p>
@@ -38,29 +40,49 @@ session_start();
           </form>
         </div>
        <div>
-       <form action="../process/treatment_comment.php" method="post">
+
+      
+       -()
     
   
     <div class="mb-3">
        <input type="hidden" name="pseudo" value="<?=$_SESSION['pseudo'] ?>">
         <input type="hidden" name="song_id" value="<?=$song['id'] ?>">
 
-      <label for="exampleInputPassword1" class="form-label">Ecriver Votre commentaire</label>
-      <input type="text" class="form-control" id="text" name="content">
-    </div>
-   
-    <button type="submit" class="btn btn-dark">Envoyer</button>
+        <div class="songs_container w-100 bg-secondary">
+     <div class="songs_card w-50 my-5 bg-light">
+       <div class="modal d-none justify-content-center hidden" style="height: 500px" id="myModal">
+         <div class="w-50 bg-white d-flex justify-content-around">
+           <p class="text-center">Commentaires</p>
+           <div>
+       
+             <button class="text-end" id="closeModal">X</button>
+           </div>
+         </div>
+       </div>
+       <button id="buttonModal" class="btn btn-info">Commentaires</button>
+
+  
   </form>
 
        </div>
       </div>
     <?php } ?>
+  
   </div>
 </div>
 
 
 
-  <script type="text/javascript" src="../js/main.js"></script>
+
+
+
+
+
+
+
+
+<script src="../js/main.js"></script>
   <?php
-  require_once('../partials/footer.php');
+include_once '../partials/footer.php';
   ?>

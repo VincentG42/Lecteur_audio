@@ -2,7 +2,7 @@
 session_start();
 require_once('../process/connect_db.php');
 
-$pseudo=$_SESSION['pseudo'];
+$pseudo= $_SESSION['pseudo'];
 
 
 $request = $database->query("SELECT * FROM song");
