@@ -1,9 +1,9 @@
 header img{
-    height: 10em;
+    height: 8em;
     width: auto;
 }
 
-#body_connect {
+body{
     background-image: url('../Pngtreegold_.png');
     }
 
@@ -34,11 +34,14 @@ header img{
 }
 
 .playlist_wrapper{
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 20px;
     border: 1px black solid;
 }
 
 .playlist_song_list{
     border: 1px black solid;
+    background-color: rgba(220, 198, 72, 0.801);
 
 }
 
@@ -49,6 +52,11 @@ li{
     font-size: x-small;
 }
 /* page audioplayer_playlist */
+
+#onplay svg{
+    fill: rgb(209, 212, 20);
+    background: linear-gradient(180deg #d3d01b #000000 #d3d01b);
+}
 
 .audioplayer_wrapper{
     width: 100vw;
@@ -63,5 +71,6 @@ li{
 }
 
 .playslist_row:hover{
-        background-color: rgba(0, 0, 0, 0.091);
+        background-color: rgba(0, 0, 0, 0.758);
+        color: antiquewhite;
 }

@@ -14,9 +14,9 @@ $playlist_songs = $request->fetchAll();
 
 ?>
 
-<div class="user_card container-fluid w-100 d-flex flex-column  pt-2  bg-secondary text-light justify-content-center align-items-center">
+<div class="user_card container-fluid w-100 d-flex flex-column  pt-2 text-light justify-content-center align-items-center">
     <h2>Hello <?= $user['pseudo']?></h2>
-    <div class="playlist_wrapper my-4 p-3 d-flex flex-column justify-content-center align-items-center">
+    <div class="playlist_wrapper m-4 p-5 d-flex flex-column justify-content-center align-items-center">
         <h3>Vos playlists</h3>
             <?php if (!empty($playlists)){ ?>
                 <form action="" id="select_playlist_form" method="post">
@@ -37,9 +37,9 @@ $playlist_songs = $request->fetchAll();
                 <li class="playlist_song_list d-flex my-2 justify-content-between align-items-center p-1"> 
                     <div class="d-flex align-items-center">
 
-                        <img src="../img/<?=$song['pictures']?>" alt="song cover" height="50px" width="auto">
+                        <img src="../img/<?=$song['pictures']?>" alt="song cover" height="50px" width="auto" class="m-3">
                        
-                            <p><?= $song['title']?><span class="text-secondary"> par </span> <?= $song['singer']?> </p>
+                            <p><?= $song['title']?><span class="text-secondary"> par </span><i> <?= $song['singer']?></i> </p>
                         
                     </div>
                     <div class="add_playlist col-2 me-5">
