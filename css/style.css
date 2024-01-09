@@ -6,7 +6,13 @@ header img{
 body{
     background-image: url('../Pngtreegold_.png');
 }
-
+.songs_unit{
+    background-color: rgba(0, 0, 0, 0.692);
+    border: 1px rgb(226, 181, 33) solid;
+}
+.songs_unit p{
+   color:rgba(226, 181, 33)
+}
 
 .minipic{
     height: 50px;
