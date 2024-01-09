@@ -157,6 +157,3 @@ let modal = document.getElementById('myModal');
 
 
 
-
-
-
