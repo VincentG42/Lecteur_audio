@@ -18,6 +18,15 @@ body{
     justify-content: center;
     align-items: center;
 }
+
+.songs_card{
+    border: black 1px solid;
+    background-color:#000000a5;
+    color: beige;
+}
+.songs_card svg{
+       fill: beige;
+}
 .container_connect{
     width: 100vw;
     height: 100vh;
@@ -28,10 +37,7 @@ body{
     border: 1px black solid;
     box-shadow: 2px 2px 2px black;
 }
-.songs_unit{
-    padding-top: 1em;
-    border:1px black solid;
-}
+
 
 .playlist_wrapper{
     background-color: rgba(0, 0, 0, 0.8);
