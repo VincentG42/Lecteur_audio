@@ -18,7 +18,7 @@ $user = $request->fetch();
 
 $user_id = $user['id'];
        
-$request =$database->query("SELECT comment.id, comment.content, user.pseudo, comment.song_id FROM comment JOIN user ON comment.user_id=user.id;=user_id  WHERE  song_id ='$song_id'"); 
+$request =$database->query("SELECT comment.id, comment.content, user.pseudo, comment.song_id FROM comment JOIN user ON comment.user_id=user.id  WHERE  song_id ='$song_id'"); 
 $commentList = $request->fetchAll();
 
 // var_dump($commentList)
