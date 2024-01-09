@@ -1,42 +1,29 @@
 <?php
 require_once('../partials/header.php');
 include_once('../process/treatment_singers.php');
-include_once('../process/connect_db.php');
+
 ?>
-<div class="d-flex justify-content-center">
-<form id="search-form">
-  <label for="search-input">Rechercher par auteur : </label>
-  <input type="text" id="search-input" name="search" placeholder="Entrez le nom de votre zik">
-  <button type="button" id="search-button">Rechercher</button>
-</form>
-</div>
-<?php foreach ($songs as $song) { ?>
-  <div class="songs_unit row justify-content-center align-items-center song-item hidden" data-author="<?= $song['singer'] ?>">
+<div class="singers_wrapper mt-4 ms-3 ps-2">
 
-    <img class="minipic col-3" src="../img/<?= $song['pictures'] ?>">
-    <div class="col-6">
-      <p><?= $song['title'] ?></p>
-      <p><?= $song['singer'] ?></p>
+  <?php foreach ($singers as $singer) { ?>
+    <h4 class="singer_list text-center w-25"><?= $singer['singer']?></h4>
+
+    <div class="songs_of_singer w-25 text-center text-light">
+        <?php if($singer){
+            $singerForList=$singer['singer'];
+            $request = $database->query("SELECT * FROM song WHERE singer='$singerForList'");
+            $songsOfSinger = $request->fetchAll();
+          foreach($songsOfSinger as $song){ ?>
+          <p><?= $song['title'] ?></p>
+         <?php } }?>
     </div>
-    <div class="col-2 d-flex">
-      <audio class="title" controls>
-        <source src="../mp3/<?=$song['track'] ?>">
-      </audio>
-    </div> 
-  </div>
-<?php } ?>
-
-
-
-<div class="songs_container w-100 bg-secondary">
-  <div class="songs_card w-50 my-5 bg-light">
     
+    <?php } ?>
+</div>
 
- 
 
 
-
-<script type="text/javascript" src="main.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
   <?php
   require_once('../partials/footer.php');
   ?>

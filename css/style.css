@@ -5,7 +5,7 @@ header img{
 
 body{
     background-image: url('../Pngtreegold_.png');
-    }
+}
 
 
 .minipic{
@@ -59,24 +59,59 @@ li{
 }
 /* page audioplayer_playlist */
 
-#onplay svg{
+audio::-webkit-media-controls-panel{
+    background-color:rgba(0, 0, 0, 0)
+}
+
+.audioplayer_wrapper svg{
     fill: rgb(209, 212, 20);
-    background: linear-gradient(180deg #d3d01b #000000 #d3d01b);
+    
+}
+
+.playslist_row{
+
+    border: black 1px solid;
+    background-color:#000000a5;
 }
 
 .audioplayer_wrapper{
     width: 100vw;
 }
 .link_playlist:link{
- color: black;
+    color: beige;
  text-decoration: none;
 }
 .link_playlist:visited{
-    color: black;
+    color: beige;
     text-decoration: none;
 }
 
 .playslist_row:hover{
-        background-color: rgba(0, 0, 0, 0.758);
-        color: antiquewhite;
+       filter: grayscale(50);
 }
+
+.link_playlist:link:hover{
+    color: rgb(130, 130, 16);
+ text-decoration: none;
+}
+
+.link_playlist:visited:hover{
+    color: rgb(130, 130, 16);
+ text-decoration: none;
+}
+
+/* singers */
+h4{
+    color: rgb(138, 128, 17);
+}
+
+.songs_of_singer{
+    background-color: #363636;
+ 
+}
+h4:hover{
+    color: #363636;
+}
+
+
+
